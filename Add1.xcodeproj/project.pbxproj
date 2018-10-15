@@ -13,6 +13,7 @@
 		FAC05B442173A761002B5923 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC05B422173A761002B5923 /* LaunchScreen.storyboard */; };
 		FAC05B4D2173A8E6002B5923 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC05B4B2173A8E6002B5923 /* MainViewController.swift */; };
 		FAC05B4E2173A8E6002B5923 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC05B4C2173A8E6002B5923 /* MainViewController.xib */; };
+		FAC05B502174F263002B5923 /* HVD_Comic_Serif_Pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAC05B4F2174F263002B5923 /* HVD_Comic_Serif_Pro.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FAC05B452173A761002B5923 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAC05B4B2173A8E6002B5923 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FAC05B4C2173A8E6002B5923 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		FAC05B4F2174F263002B5923 /* HVD_Comic_Serif_Pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HVD_Comic_Serif_Pro.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				FAC05B422173A761002B5923 /* LaunchScreen.storyboard */,
 				FAC05B452173A761002B5923 /* Info.plist */,
 				FAC05B4B2173A8E6002B5923 /* MainViewController.swift */,
+				FAC05B4F2174F263002B5923 /* HVD_Comic_Serif_Pro.otf */,
 				FAC05B4C2173A8E6002B5923 /* MainViewController.xib */,
 			);
 			path = Add1;
@@ -127,6 +130,7 @@
 			files = (
 				FAC05B442173A761002B5923 /* LaunchScreen.storyboard in Resources */,
 				FAC05B4E2173A8E6002B5923 /* MainViewController.xib in Resources */,
+				FAC05B502174F263002B5923 /* HVD_Comic_Serif_Pro.otf in Resources */,
 				FAC05B412173A761002B5923 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
