@@ -9,6 +9,10 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    @IBOutlet weak var numbersLable: UILabel?
+    @IBOutlet weak var scoreLabel: UILabel?
+    @IBOutlet weak var inputField: UITextView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +23,15 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func generateRandomNumber() -> String {
+        var result:String = ""
+        for _ in 1...4 {
+            let digit = Int(arc4random_uniform(10))
+            result += "\(digit)"
+        }
+        return result
     }
     
 
