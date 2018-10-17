@@ -12,10 +12,21 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var numbersLable: UILabel?
     @IBOutlet weak var scoreLabel: UILabel?
-    @IBOutlet weak var inputField: UITextView?
+    @IBOutlet weak var inputField: UITextField?
+    
+    var score:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setRandomNumberLable()
+        updateScoreLabel()
+        clearInput()
+        
+        print("view did load before addtarget")
+        inputField?.addTarget(self, action: #selector(textFieldDidChange(textField:)),
+                              for: UIControlEvents.editingChanged)
+        print("view did load after addtarget")
 
         // Do any additional setup after loading the view.
     }
@@ -25,7 +36,50 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func generateRandomNumber() -> String {
+    @objc func textFieldDidChange(textField: UITextField)
+    {
+        print("in text field did change 1")
+        if inputField?.text?.count ?? 0 != 4 {
+            print("in text field did change 2")
+
+            return
+        }
+        print("in text field did change 3")
+
+        if let numbers_text = numbersLable?.text,
+           let input_text = inputField?.text,
+           let numbers = Int(numbers_text),
+           let input = Int(input_text)
+        {
+            print("comparing: \(input) \(numbers_text) \(input - numbers)")
+            
+            if input - numbers == 1111
+            {
+                print("Correct.")
+                score += 1
+            } else {
+                score -= 1
+            }
+        }
+        
+        setRandomNumberLable()
+        updateScoreLabel()
+        clearInput()
+    }
+    
+    func updateScoreLabel() {
+        scoreLabel?.text = "\(score)"
+    }
+    
+    func clearInput() {
+        inputField?.text = ""
+    }
+    
+    func setRandomNumberLable() {
+        numbersLable?.text = generateRandomNumberString()
+    }
+    
+    func generateRandomNumberString() -> String {
         var result:String = ""
         for _ in 1...4 {
             let digit = Int(arc4random_uniform(10))
