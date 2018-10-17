@@ -21,12 +21,12 @@ class MainViewController: UIViewController {
         
         setRandomNumberLable()
         updateScoreLabel()
-        clearInput()
         
         print("view did load before addtarget")
         inputField?.addTarget(self, action: #selector(textFieldDidChange(textField:)),
-                              for: UIControlEvents.editingChanged)
+                              for: UIControlEvents.editingDidEndOnExit)
         print("view did load after addtarget")
+        clearInput()
 
         // Do any additional setup after loading the view.
     }
@@ -39,7 +39,7 @@ class MainViewController: UIViewController {
     @objc func textFieldDidChange(textField: UITextField)
     {
         print("in text field did change 1")
-        if inputField?.text?.count ?? 0 != 4 {
+        if inputField?.text?.count ?? 0 < 4 {
             print("in text field did change 2")
 
             return
@@ -73,17 +73,20 @@ class MainViewController: UIViewController {
     
     func clearInput() {
         inputField?.text = ""
+        
+        inputField?.becomeFirstResponder()
     }
     
     func setRandomNumberLable() {
-        numbersLable?.text = generateRandomNumberString()
+        numbersLable?.text = "\(generateRandomNumber())"
     }
     
-    func generateRandomNumberString() -> String {
-        var result:String = ""
+    func generateRandomNumber() -> Int {
+        var result:Int = 0
         for _ in 1...4 {
             let digit = Int(arc4random_uniform(10))
-            result += "\(digit)"
+            result = result * 10 + digit
+            print("\(result)")
         }
         return result
     }
